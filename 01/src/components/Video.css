@@ -1,0 +1,25 @@
+.dark{
+    background-color: burlywood;
+    color: black;  
+}
+.container{
+    width: 15re;
+    margin: 0 0.2em;
+    float: left;
+}
+.pic img{
+    width: 100%;
+}
+.title{
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    color: white;
+}
+.channel, .views{
+    font-size: small;
+    color: white;
+    margin-bottom: 0.2em;
+}
+.views span{
+    padding: 0.05em;
+}
