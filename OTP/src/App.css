@@ -11,3 +11,14 @@
   font-size: 1.2em;
 
 }
+
+.Button:hover{background-color: rgb(188, 247, 112);}
+.Button{
+  font-size: medium;  
+  color: rgb(5, 97, 9);
+  background-color: gainsboro;
+  border-color: black;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+}

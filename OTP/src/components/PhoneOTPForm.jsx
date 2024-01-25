@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
+import OtpInput from './OtpInput';
 
 const PhoneOTPForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("")
@@ -18,7 +19,7 @@ const PhoneOTPForm = () => {
     }
     // Here we can write code for Calling BackEnd API so that we can send OTP to user
     // If OTP sent successfully then show OTP field
-    showOtpInput(true)
+    setShowOtpInput(true)
   }
 
 const onOtpSubmit = (otp)=>{
@@ -28,19 +29,24 @@ const onOtpSubmit = (otp)=>{
 
   return (
     <div>
-      {!showOtpInput?(<form onSubmit={handlePhoneSubmit}>
-        <input
-          type="text"
-          value={phoneNumber}
-          onChange={handlePhoneNumber}
-          placeholder="Enter Phone Number"
-        />
-        <button type="submit">Submit</button>
-      </form>):
-      (<div><p>Entered OTP sent to {phoneNumber}</p> 
-      <OtpInput length={4} onOtpSubmit={onOtpSubmit}/></div>)}
-      </div>
-);
+      {!showOtpInput ? (
+        <form onSubmit={handlePhoneSubmit}>
+          <input
+            type="text"
+            value={phoneNumber}
+            onChange={handlePhoneNumber}
+            placeholder="Enter Phone Number"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      ) : (
+        <div>
+          <p>Entered OTP sent to {phoneNumber}</p>
+          <OtpInput length={4} onOtpSubmit={onOtpSubmit} />
+        </div>
+      )}
+    </div>
+  );
       };
 
     export default PhoneOTPForm
