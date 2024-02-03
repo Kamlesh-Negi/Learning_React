@@ -4,7 +4,7 @@ import './Video.css'
 
 
 function Video3({ title, channel = "ABC", views, time, verified,id, children }) {
-
+console.log("render Video")
 
 return (
 <>

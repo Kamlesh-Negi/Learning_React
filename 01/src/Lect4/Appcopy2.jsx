@@ -6,19 +6,39 @@ import PlayButton from "../components/PlayButton.jsx";
 import { useState } from "react";
 
 function Appcopy2() {
-  const [videos, setVideos] = useState(videoDB)
+  console.log("render App");
+
+  const [videos, setVideos] = useState(videoDB);
   return (
     <>
       <div className="App" onClick={()=>console.log("App: event Bubbling")}>
         <div><button onClick={()=>{
-         setVideos( [ ...videos,{
+          /**  videos.push({
             id: videos.length+1,
             title: "SQL Tutorial",
             views: "9000",
             time: "6 months ago",
             channel: "PQR",
             verified: true,
-          }]);
+           });
+           setVideos(videos);       // will not add new video. React wants to create a copy of 
+                                    // that variable which then will set as the state we should not mutate the state variable directly  
+         */
+
+          /** create a new array by spreading the existing videos and adding the new video */
+
+          setVideos([
+            ...videos,
+            {
+              id: videos.length + 1,    // for now we are using video length for id, but it is not a
+                                        // good practice becsuse it will create id error if some video is deleted.
+              title: "SQL Tutorial",
+              views: "9000",
+              time: "6 months ago",
+              channel: "PQR",
+              verified: true,
+            }, 
+          ]);
         }
         } >Add Video</button> </div>
         {videos.map((video) => (
