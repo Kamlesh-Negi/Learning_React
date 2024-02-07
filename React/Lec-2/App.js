@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM  from "react-dom/client";
+
 const heading = React.createElement(
   "h1", // tag
   { id: "heading" }, // 2nd parameter is object
@@ -24,7 +27,7 @@ const parent = React.createElement(
   )
 );
 
-/* creating nested structure having siblings [=> will pass the children in array]
+/* creating nested structure havind siblings [=> will pass the children in array]
 
 <div id = "parent">
     <div id =" child"
