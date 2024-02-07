@@ -51,13 +51,20 @@ some key aspects and features of bundlers:
         npm init       //  only this command and then follow as it says
 
         package name: lect-2                         // Your_Package_name
+       
         version: 1.0.0                              //  initial_version_of_your_projects(usually 1.0.0)
+       
         description: Basics of React           // A brief description of project, providing its purpose and functionality
+       
         entry point: (index.js) App.js            // let it be App.js for now instead of index.html (can change it later)
+       
         test command: test                      // let it be for now instead of npm run dev(start), can change it later
+       
         git repository: https://github.com/Kamlesh-Negi/Learning_react          // your git repo. address
+      
         keywords: React, npm, JavaScript, jsx       // write Keywords here that describe your project. Help others discover your project on npm
         author: Kamlesh                               //  Your_name(Author)     
+      
         license: (ISC)          // The license under which your project is distributed, by-default ISC here, you can choose other
 
 *   we can recreate our node_modules using pacakge.json and package-lock.json so we don't need to push it over git            
