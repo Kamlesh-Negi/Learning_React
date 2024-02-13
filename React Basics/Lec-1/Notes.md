@@ -10,9 +10,6 @@
 
          2. <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
-
-       // we are using these lins for now but will not use these links in  future because we need to change them again and again if some other version of react is released  
-
  #### Difference between development.js and production.js :
         
 *  Development Version:

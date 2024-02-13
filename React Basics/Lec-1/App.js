@@ -24,7 +24,7 @@ const parent = React.createElement(
   )
 );
 
-/* creating nested structure having siblings [=> will pass the children in array]
+/* creating nested structure havind siblings [=> will pass the children in array]
 
 <div id = "parent">
     <div id =" child"
