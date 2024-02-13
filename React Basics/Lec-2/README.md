@@ -126,9 +126,9 @@ create a script:
                  "test": "test"
                  },
         
-        // *build* for production and *start* for development mode
-
-* now we will just run the command *npm run start*
+        
+// for development  ->  npm run build
+// for production  ->  npm run start
 
 
 
