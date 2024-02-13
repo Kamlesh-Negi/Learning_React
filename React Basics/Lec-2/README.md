@@ -127,7 +127,7 @@ create a script:
                  },
         
         
-// for development  ->  npm run build
+// for development  ->  npm run build  
 // for production  ->  npm run start
 
 
