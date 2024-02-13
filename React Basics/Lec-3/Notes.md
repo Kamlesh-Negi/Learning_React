@@ -57,3 +57,31 @@ ReactDOM.render(element, document.getElementById("root"))
 * Difference between React element and DOM element:
 ![React vs DOM element](image.png)
 ![React vs DOM element](image-1.png)
+
+
+### JSX vs HTML
+JSX has a syntax that resembles HTML, but it is not HTML. JSX is a syntactic sugar for React.createElement calls. In JSX, you write components and elements using a syntax similar to HTML, but it gets transpiled to JavaScript.![JSX vs HTML](JSX-vs-HTML_1.jpg)
+![JSX vs HTML](JSX-vs-HTML.jpg)
+
+
+#### Creating an element using React
+```
+const heading = React.createElement("h1",{},"Heading 1 using React")
+```
+
+#### Creating an element using JSX  
+``` 
+const heading = <h1>Heading 1 using JSX</h1>
+```
+
+If we are writing multiple lines then we should wrap it into parantheses()
+```
+const heading = (<h1 className = "head">
+Heading having classname
+</h1>)
+```
+However, the absence of parentheses doesn't cause an issue. However, but applyin them improves readability.
+
+
+*Note : JSX code is transpiled to React.createElement calls and then it is converted it to a JS(JavaScript) Object (DOM) and then it is rendered as HTML element*
+
