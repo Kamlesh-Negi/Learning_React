@@ -43,7 +43,8 @@ const Header = () => {
 //   backgroundColor: "grey"
 // }
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  console.log(props);
   return (
     <div className="restaurant-card" style={{ backgroundColor: "gainsboro" }}>
       <img
@@ -51,8 +52,8 @@ const RestaurantCard = () => {
         alt="veg-biryani"
         src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xqwpuhgnsaf18te7zvtv"
       />
-      <h3>Meghana Foods</h3>
-      <h4>Biryani, North Indian, Asian</h4>
+      <h3>{props.restaurantName}</h3>
+      <h4>{props.cuisine}</h4>
       <h4>4.4 stars</h4>
       <h4>30 minutes</h4>
     </div>
@@ -64,14 +65,21 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="restaurant-container">
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-      
+        <RestaurantCard
+          restaurantName="Meghana Foods"
+          cuisine="Biryani North Indian, Asian"
+          rating="4.5"
+        />
+        <RestaurantCard
+          restaurantName="KFC"
+          cuisine="Burger, Fast Food "
+          rating="4.3 "
+        />
+        <RestaurantCard
+          restaurantName="Domino's"
+          cuisine="Pizza,Italian "
+          rating="4"
+        />
       </div>
     </div>
   );
