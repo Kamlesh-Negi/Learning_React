@@ -49,6 +49,16 @@ const Header = () => {
 const RestaurantCard = ({ restaurantData }) => {
   //console.log(props);     {/**props are object */}
 
+  //cleaning the code
+  const {
+    cloudinaryImageId,
+    name,
+    cuisines,
+    costForTwo,
+    avgRating,
+    sla: { deliveryTime } = ({} = {}),  // as deliveryTime is inside sla{} object which itself is inside info{}
+  } = restaurantData?.info;
+
   return (
     <div className="restaurant-card" style={{ backgroundColor: "gainsboro" }}>
       <img
@@ -56,17 +66,19 @@ const RestaurantCard = ({ restaurantData }) => {
         alt="veg-biryani"
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restaurantData.info.cloudinaryImageId
+          cloudinaryImageId
         }
       />
-      <h3>{restaurantData.info.name}</h3>
-      <h4>{restaurantData.info.cuisines.join(", ")}</h4>
-      <h4>{restaurantData.info.costForTwo}</h4>
-      <h4>Ratings: {restaurantData.info.avgRating}</h4>
-      <h4>Delivery: {restaurantData.info.sla.deliveryTime}</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{costForTwo}</h4>
+      <h4>Ratings: {avgRating}</h4>
+      <h4>Delivery: {deliveryTime}</h4>
     </div>
   );
 };
+
+// Restaurant List
 
 const resList = [
   {
@@ -1114,21 +1126,21 @@ const resList = [
   },
 ];
 
-// to find the index of an object in the array of object
+//  to find the index of an object in the array of object
 
 const index = resList.findIndex((object) => {
   return object.info.name === "KFC";
 });
 console.log(index);
+
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
-      <div className="restaurant-container">
-        <RestaurantCard restaurantData={resList[0]} />
-        <RestaurantCard restaurantData={resList[1]} />
-        <RestaurantCard restaurantData={resList[2]} />
-        <RestaurantCard restaurantData={resList[3]} />
+      <div className="restaurant-container">  {/*using map to iterate over all the objects in the array */}
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} restaurantData={restaurant} />
+        ))}
       </div>
     </div>
   );
