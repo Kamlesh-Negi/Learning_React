@@ -30,16 +30,16 @@
 }
 .restaurant-card{
     padding: 5px;
-    height: 350px ;
+    height: 380px ;
     width: 200px;
     box-shadow: 4px;
     margin: 5px;
-}
+    }
 
 .restaurant-card:hover{
     border: 2px solid;
     cursor: pointer;
-    box-shadow: 2px;
+    box-shadow: 5px 10px 10px 5px palegreen;
 }
 
 .restaurant-logo {
