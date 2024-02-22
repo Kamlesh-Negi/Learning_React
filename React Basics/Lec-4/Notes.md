@@ -121,3 +121,12 @@ const MyComponent2 = () = {
 }
 export default MycComponent2;
 ```
+
+## Hooks
+In React, hooks are functions that allow you to use state and other React features in functional components.
+* They were introduced in React 16.8 to enable functional components to manage local component state and perform side effects
+* Some hooks are:
+  * **useState**: Allows functional components to manage state. It returns an array with two elements: the current state value and a function that lets you update it.
+  ```
+  const [count,setCount] = useState(0)
+  ```
