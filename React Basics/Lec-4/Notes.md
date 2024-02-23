@@ -144,3 +144,5 @@ useEffect(() => {
 Behind the scene react uses Reconciliation and diffing algorithm to make our app fast
 
 When our state changes, react make a *virtual DOM* which is like a representation of an actual DOM
+
+* Diff Algorithm: This ,also konwn as Reconciliation, is the algorithm which finds out the difference between the old and new virtual DOM and reflect the changes only at the specific parts without actually reloading or re-rendering the actual DOM. This makes our app fast.
