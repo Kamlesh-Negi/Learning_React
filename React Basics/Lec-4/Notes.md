@@ -130,3 +130,17 @@ In React, hooks are functions that allow you to use state and other React featur
   ```
   const [count,setCount] = useState(0)
   ```
+  *Whenever a state variable updates, React will re-render our component.*
+
+  * **useEffect**: Enables performing side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM. It runs after every render.
+```
+useEffect(() => {
+  // Side effect code here
+}, [dependencies]);
+
+```
+
+## How React works?
+Behind the scene react uses Reconciliation and diffing algorithm to make our app fast
+
+When our state changes, react make a *virtual DOM* which is like a representation of an actual DOM
