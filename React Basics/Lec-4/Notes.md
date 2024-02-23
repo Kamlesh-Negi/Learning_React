@@ -130,6 +130,19 @@ In React, hooks are functions that allow you to use state and other React featur
   ```
   const [count,setCount] = useState(0)
   ```
+**** some other ways of using/declaring useState
+  ```
+  1. Destructuring in the Declaration:
+       const arr = useState(resList)
+       const [listOfRestaurant, setListOfRestaurant] = arr
+   
+   
+  2. Accessing Elements via Index:
+      const arr = useState(resList)
+      const listOfRestaurant = arr[0] 
+      const setListOfRestaurant = arr[1] 
+   ```
+
   *Whenever a state variable updates, React will re-render our component.*
 
   * **useEffect**: Enables performing side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM. It runs after every render.
