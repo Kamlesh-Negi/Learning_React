@@ -175,3 +175,23 @@ When our state changes, react make a *virtual DOM* which is like a representatio
 * Both processes work together to ensure that the UI accurately represents the current state of the application.
 
 ![Reconiliation Vs Rendering](Reconciliation_Vs_Rendering.jpg)
+
+
+#### Monolith vs Microservices
+In **monolith architecture**, the entire application is built as a **single, tightly integrated unit**.
+
+All functionalities (such as **database access, business logic,and user interface**) are covered within a single codebase.
+
+
+In **microservices architecture**, the application is made up of small, independent services that handle specific fuctionalities.
+
+Each service communicates with others directly using lightweight protocols(e.g., HTTP).
+![Monolithic vs microservices architecture](Monolith_vs_Microservices.jpg)
+
+### Approaches to get data from API
+
+ We can populate our app with the data suing two approaches:
+ 1. **LOADS PAGE------->Fetch API------->RENDER**
+ 2. **LOADS PAGE------->RENDER UI------->Fetch API------->RE-RENDER (with new Data)**
+
+ In React, we will be using the second approach because it gives a better User Experience.
