@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const Body = () => {
   // Local State Variable
-  const [listOfRestaurants, setListOfRestaurant] = useState();
+  const [listOfRestaurants, setListOfRestaurant] = useState([]);
 
   useEffect(() => {
     fetchData();
