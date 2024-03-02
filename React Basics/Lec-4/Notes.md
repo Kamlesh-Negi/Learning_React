@@ -219,3 +219,37 @@ To fetch data from the API we will use a method provided by Browser called ``fet
   .catch(error => console.error('Error:', error));
   
   ```
+
+  ### Optional Chaining
+  Optional chaining is a feature in JavaScript that allows you to access properties of an object without explicitly checking if each level of the property chain exists. It helps to simplify the code when dealing with nested objects or accessing properties that might be undefined or null.
+  * The optional chaining syntax is represented by the `?.` operator. 
+  * example:
+    ```
+      const user = {
+          name: 'John',
+          address: {
+                      street: '123 Main St',
+                      city: 'Example City',
+                      // no 'zip' property
+                   },
+          // no 'email' property
+        };
+      ```
+* without optional chaining, if you wanted to access the `zip` property of the user's address, you might do something like:
+
+  ```
+      const zipCode = user.address ? user.address.zip : undefined;
+  ```
+* with optional chaining, the same can be achieved more concisely:
+ 
+  ```
+  const zipCode = user?.address?.zip;
+   ```
+
+#### *Here are some key points about optional chaining:*
+
+**1. Graceful Handling:** It allows you to handle nested properties more gracefully, avoiding errors when attempting to access properties on null or undefined.
+
+**2. Short-Circuiting:** If any part of the chain is null or undefined, the entire expression short-circuits, and the result is undefined.
+
+**3. Functions:** Optional chaining can also be used with function calls. For example, user?.getName?.() will only call getName if it exists.
