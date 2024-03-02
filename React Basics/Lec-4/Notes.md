@@ -253,3 +253,8 @@ To fetch data from the API we will use a method provided by Browser called ``fet
 **2. Short-Circuiting:** If any part of the chain is null or undefined, the entire expression short-circuits, and the result is undefined.
 
 **3. Functions:** Optional chaining can also be used with function calls. For example, user?.getName?.() will only call getName if it exists.
+
+### Shimmer UI
+A shimmer UI is a visual design techinque used to indicate that cotent is loading or that specific area of a user inteface is in the process of being fetched.
+* Instead of showing a static loading spinner or placeholder, a shimmer effect creates the illusion of a subtle animation, typically in the form of a moving gradient or wave, to suggest that data is on it way.
+* This techinque is especially prevalent in mobile app develpement and single-page applications.

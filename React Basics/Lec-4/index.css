@@ -54,3 +54,14 @@
     margin: 5px;
     cursor: pointer;
 }
+.shimmer-container{
+    display:flex;
+    flex-wrap: wrap;
+}   
+
+.shimmer-card {
+    width: 200px;
+    height: 400px;
+    margin: 20px;
+    background-color:rgb(246, 241, 241); 
+}
