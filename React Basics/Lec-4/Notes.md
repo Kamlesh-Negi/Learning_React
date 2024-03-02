@@ -153,7 +153,7 @@ useEffect(() => {
 
 ```
 
-## How React works?
+### How React works?
 Behind the scene react uses Reconciliation and diffing algorithm to make our app fast
 
 When our state changes, react make a *virtual DOM* which is like a representation of an actual DOM
@@ -167,7 +167,7 @@ When our state changes, react make a *virtual DOM* which is like a representatio
 
 ![React Fibre Architecture](React_fibre_architecture.jpg)
   
-### Reconciliation Vs Rendering
+#### Reconciliation Vs Rendering
 * Reconciliation is the process of determining what needs to change in the component tree, while rendering is the subsequent application of those changes to the actual DOM.
 
 * Reconciliation involves the efficient computation of differences, and Renderinf is the final step where these differences are reflected visually in the user interface.
@@ -188,10 +188,34 @@ In **microservices architecture**, the application is made up of small, independ
 Each service communicates with others directly using lightweight protocols(e.g., HTTP).
 ![Monolithic vs microservices architecture](Monolith_vs_Microservices.jpg)
 
-### Approaches to get data from API
+#### Approaches to get data from API
 
  We can populate our app with the data suing two approaches:
  1. **LOADS PAGE------->Fetch API------->RENDER**
  2. **LOADS PAGE------->RENDER UI------->Fetch API------->RE-RENDER (with new Data)**
 
  In React, we will be using the second approach because it gives a better User Experience.
+
+#### fetching the data from API
+
+To fetch data from the API we will use a method provided by Browser called ``fetch()``
+  ```
+  useEffect(() => {
+      const fetchData = async () => {
+        const response = await fetch('https://api.example.com/data');
+        const result = await response.json();
+        setData(result);
+      };
+
+      fetchData();
+    }, []); // Empty dependency array ensures this effect runs once on mount
+  ```
+  We can also use **fetch().then().then().catch()**
+
+  ```   
+  fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+  
+  ```
