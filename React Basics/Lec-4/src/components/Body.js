@@ -23,7 +23,7 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-
+  // conditional rendering
 if(listOfRestaurants.length === 0){
   return <Shimmer/>
 }
