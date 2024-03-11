@@ -36,6 +36,9 @@ const Body = () => {
             onClick={() => {
               // filter the restaurant cards and update the UI
               // searchText
+              const filteredRestaurant = listOfRestaurants.filter((restaurant) => restaurant.info.name.includes(searchText));
+              setListOfRestaurant(filteredRestaurant);
+
             }}
           >
             Search
