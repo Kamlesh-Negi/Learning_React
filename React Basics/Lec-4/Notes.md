@@ -163,14 +163,14 @@ When our state changes, react make a *virtual DOM* which is like a representatio
 * React Fibre: 
  It is an internal reimplementation of the React reconciliation algorithm, introduced in React version 16.
 
-    * It's not a separate versionbut rather an update to the core algorithm that allows React to perform better and more efficiently handle complex user interfaces.  
+    * It's not a separate version but rather an update to the core algorithm that allows React to perform better and more efficiently handle complex user interfaces.  
 
 ![React Fibre Architecture](React_fibre_architecture.jpg)
   
 #### Reconciliation Vs Rendering
 * Reconciliation is the process of determining what needs to change in the component tree, while rendering is the subsequent application of those changes to the actual DOM.
 
-* Reconciliation involves the efficient computation of differences, and Renderinf is the final step where these differences are reflected visually in the user interface.
+* Reconciliation involves the efficient computation of differences, and Rendering is the final step where these differences are reflected visually in the user interface.
 
 * Both processes work together to ensure that the UI accurately represents the current state of the application.
 
