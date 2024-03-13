@@ -36,7 +36,12 @@ const Body = () => {
             onClick={() => {
               // filter the restaurant cards and update the UI
               // searchText
-              const filteredRestaurant = listOfRestaurants.filter((restaurant) => restaurant.info.name.includes(searchText));
+              const filteredRestaurant = listOfRestaurants.filter(
+                (restaurant) =>
+                  restaurant.info.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase())
+              );
               setListOfRestaurant(filteredRestaurant);
 
             }}
