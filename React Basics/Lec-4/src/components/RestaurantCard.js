@@ -7,7 +7,8 @@ const RestaurantCard = ({ restaurantData }) => {
     cuisines,
     costForTwo,
     avgRating,
-    sla: { deliveryTime } = ({} = {}), // as deliveryTime is inside sla{} object which itself is inside info{}
+//    sla: { deliveryTime } = ({} = {}), // as deliveryTime is inside sla{} object which itself is inside info{}
+    sla
   } = restaurantData?.info;
 
   return (
@@ -21,7 +22,9 @@ const RestaurantCard = ({ restaurantData }) => {
       <h4>{cuisines.join(", ")}</h4>
       <h4>{costForTwo}</h4>
       <h4>Ratings: {avgRating}</h4>
-      <h4>Delivery: {deliveryTime}</h4>
+      {/* <h4>Delivery: {deliveryTime}</h4> */}
+      <h4>Delivery: {sla?.slaString}</h4>
+
     </div>
   );
 };
