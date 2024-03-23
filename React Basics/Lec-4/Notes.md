@@ -145,6 +145,14 @@ In React, hooks are functions that allow you to use state and other React featur
 
   *Whenever a state variable updates, React will re-render our component.*
 
+  **Note: Always call useState inside a component.**
+
+  * useState is use to create local state variables inside functional component, therefore, call it inside functional component.
+
+    * try to call this useState hook on the top of functional component
+
+    * Never create useState inside conditional (if-else, for loop) or functions, it will create inconsistencies.
+
   * **useEffect**: Enables performing side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM. It runs after every render.
 ```
 useEffect(() => {
@@ -157,7 +165,7 @@ useEffect(() => {
   *  The first argument is a callback fuction that contains the code for the side effect you want to perform.
   * The second argument is an optional array of dependencies. If provided, the effect will only re-run if one of the dependencies has changed.
     * If empty [] dependency, then useEffect is called only once after the initial render.
-    
+
     * If this arguments is omitted(i.e., if we remove[]), the effect will run after every render.
 
 
