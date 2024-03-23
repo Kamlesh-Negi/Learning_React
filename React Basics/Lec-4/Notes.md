@@ -152,6 +152,15 @@ useEffect(() => {
 }, [dependencies]);
 
 ```
+**Note: It is not mandatory to use dependency array in useEffect. But a callback function is mandatory.**
+
+  *  The first argument is a callback fuction that contains the code for the side effect you want to perform.
+  * The second argument is an optional array of dependencies. If provided, the effect will only re-run if one of the dependencies has changed.
+    * If empty [] dependency, then useEffect is called only once after the initial render.
+    
+    * If this arguments is omitted(i.e., if we remove[]), the effect will run after every render.
+
+
 
 ### How React works?
 Behind the scene react uses Reconciliation and diffing algorithm to make our app fast
