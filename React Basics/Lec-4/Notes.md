@@ -271,7 +271,38 @@ To fetch data from the API we will use a method provided by Browser called ``fet
 
 **3. Functions:** Optional chaining can also be used with function calls. For example, user?.getName?.() will only call getName if it exists.
 
-### Shimmer UI
+## Shimmer UI
 A shimmer UI is a visual design techinque used to indicate that cotent is loading or that specific area of a user inteface is in the process of being fetched.
 * Instead of showing a static loading spinner or placeholder, a shimmer effect creates the illusion of a subtle animation, typically in the form of a moving gradient or wave, to suggest that data is on it way.
 * This techinque is especially prevalent in mobile app develpement and single-page applications.
+
+
+## React Router
+React Router is a popular library for handling routing in React applications. It allows developers to create single-page applications with multiple views or pages that can be navigated without a full page reload.
+* React Router consists of several packages, with `react-router-dom` being the most commonly used in web apps.
+* Overview of `react-router-dom`
+![alt text](<react router dom.jpg>)
+* In React Router v6, the path and element props are used within the `<Route>` component to define a route and specify the React element to render when the route matches the current URL. 
+* In React Router v6, it's simply `BrowserRouter`, not `CreateBrowserRouter`.
+example:
+```
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import UserProfile from './components/UserProfile';
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        {/* Define routes using the Route component */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/users/:username" element={<UserProfile />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+```
