@@ -311,4 +311,7 @@ export default App;
 Push the children according to the route. If our path is `/about` then we should route to the `About component`.
 * We will load this `/about` below the `Header component` in AppLayout.
 * We will use `<Outlet>` component for children routing.
-* Our children components will take the place of this outlet component according to the path we set
+* Our children components will take the place of this outlet component according to the path we set.
+
+#### Caution:
+When we want to go to the `About Us` (or any other component) page just by clicking the `About Us` on the Header, we should not use the anchor tag `<a>` in react. Why?? Because it will reload the whole page.![alt text](<why we should not anhor tag in react.jpg>)
