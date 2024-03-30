@@ -306,3 +306,9 @@ const App = () => {
 
 export default App;
 ```
+### Children Routing
+
+Push the children according to the route. If our path is `/about` then we should route to the `About component`.
+* We will load this `/about` below the `Header component` in AppLayout.
+* We will use `<Outlet>` component for children routing.
+* Our children components will take the place of this outlet component according to the path we set
