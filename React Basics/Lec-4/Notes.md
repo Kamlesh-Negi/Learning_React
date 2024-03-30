@@ -315,3 +315,11 @@ Push the children according to the route. If our path is `/about` then we should
 
 #### Caution:
 When we want to go to the `About Us` (or any other component) page just by clicking the `About Us` on the Header, we should not use the anchor tag `<a>` in react. Why?? Because it will reload the whole page.![alt text](<why we should not anhor tag in react.jpg>)
+
+**Then How can we navigate without reloading the whole page??**
+
+* use Link component of the react-router-dom.
+example:
+```
+<Link to = "/about"> About Us </Link>
+```
