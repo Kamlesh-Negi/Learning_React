@@ -323,3 +323,8 @@ example:
 ```
 <Link to = "/about"> About Us </Link>
 ```
+### 2 Types of Routing:
+1. Client Side Routing - The routing logic is handled by the client (browser). The intial HTML is loaded once, and subsequent navigation between pages is managed by JavaScript on the client side without requesting new HTML from the server.
+
+2. Server Side Routing - The routing logic is handled by the server. When a user requests a new page, the server generates and returns the HTML for the entire page, including its content.
+![alt text](Client-server-routing.jpg)
