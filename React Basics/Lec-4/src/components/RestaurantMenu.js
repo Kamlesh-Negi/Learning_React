@@ -17,20 +17,24 @@ const RestaurantMenu = () => {
     setResInfo(json.data);
   };
 
- // const {name, cuisines, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
+  if(resInfo === null) return <Shimmer/>
+  const {name, cuisines, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
 
-  return resInfo === null ? (
-    <Shimmer />
-  ) : (
+  const {itemCards} = resInfo?.cards[4]?.groupedCard.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
+  console.log(itemCards)
+  return (
     <div className="menu">
-      <h1>{resInfo?.cards[2]?.card?.card?.info?.name}</h1>
-      <h3>{resInfo?.cards[2]?.card?.card?.info?.cuisines.join(",")}</h3>
-      <h3>{resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
+      <h1>{name}</h1>
+      <p>{cuisines.join(",")}</p>
+      <p>{costForTwoMessage}</p>
       <h2>Menu</h2>
       <ul>
-        <li>Biryani</li>
-        <li>Burger</li>
-        <li>Diet Coke</li>
+        {itemCards.map((item) => (
+          <li key = {item.card.info.id}>
+            {item.card.info.name}-{"Rs."}{item.card.info.price/100 || item.card.info.price/100}
+          </li>
+        ))}
       </ul>
     </div>
   );
