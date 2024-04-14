@@ -1,15 +1,14 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // Local State Variable
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurant] = useState([]);
-  const [searchText, setSearchText] = useState("")
-
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -35,7 +34,14 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" className="search-box" value={searchText} onChange ={(e)=>{setSearchText(e.target.value)}}/>
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
           <button
             onClick={() => {
               // filter the restaurant cards and update the UI
@@ -47,7 +53,6 @@ const Body = () => {
                     .includes(searchText.toLowerCase())
               );
               setFilteredRestaurant(filteredRestaurant);
-
             }}
           >
             Search
@@ -66,13 +71,14 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-container">
-        {" "}
         {/*using map to iterate over all the objects in the array */}
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard
+          <Link
             key={restaurant.info.id}
-            restaurantData={restaurant}
-          />
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard restaurantData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
